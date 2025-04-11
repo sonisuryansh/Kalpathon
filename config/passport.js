@@ -103,6 +103,7 @@ passport.use(new GitHubStrategy({
 // }
 
 
+// Shared OAuth logic
 async function handleOAuth(provider, profile, done) {
   try {
     const email = profile.emails?.[0]?.value || '';
@@ -111,9 +112,13 @@ async function handleOAuth(provider, profile, done) {
       return done(null, false, { message: 'Email is required' });
     }
 
-    const [existing] = await db.execute('SELECT * FROM users WHERE oauth_id = ? AND provider = ?', [profile.id, provider]);
-    if (existing.length > 0) return done(null, existing[0]);
+    // 🔍 Check if email already exists
+    const [existingEmailUser] = await db.execute('SELECT * FROM users WHERE email = ?', [email]);
+    if (existingEmailUser.length > 0) {
+      return done(null, existingEmailUser[0]); // Return existing user to avoid duplicate email error
+    }
 
+    // 🆕 If not found, insert new user
     const name = profile.displayName || 'Unknown User';
     const [result] = await db.execute(
       'INSERT INTO users (name, email, provider, oauth_id) VALUES (?, ?, ?, ?)',
