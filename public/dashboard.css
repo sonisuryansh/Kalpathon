@@ -1,0 +1,200 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background: #f4f9ff;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h2 {
+    font-weight: 600;
+  }
+  
+  /* Navbar */
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+  }
+  
+  .navbar .form-select {
+    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1549921296-3a16d7ed169b?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Sections */
+  section {
+    padding: 60px 0;
+  }
+  
+  /* Carousel */
+  .carousel-item {
+    background: #f2f2f2;
+    padding: 3rem;
+    border-radius: 10px;
+  }
+  
+  .carousel-inner {
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+  }
+  
+  /* Cards */
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .card img {
+    max-height: 60px;
+    object-fit: contain;
+  }
+  
+  /* Counters */
+  .counter {
+    font-size: 2.5rem;
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  /* Form Inputs */
+  .form-floating input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Contact / About */
+  #about, #contact {
+    background-color: #e6f0ff;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 40px;
+  }
+  
+  #contact {
+    background-color: #005792;
+    color: white;
+  }
+  
+
+  
+  /* AOS animation override (optional for smoother fade-in) */
+  [data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+  }
+/* Add these GSAP animation classes */
+.animated-section {
+  opacity: 0;
+  transform: translateY(40px);
+}
+/* My Schemes Layout */
+.scheme-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .scheme-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .scheme-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .scheme-body {
+    padding: 1rem 1.2rem;
+  }
+  
+  .scheme-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .scheme-desc {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+  }
+/* Scheme Card Styling */
+.scheme-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    height: 100%;
+  }
+  
+  .scheme-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  
+  .scheme-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .scheme-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem;
+    color: #212529;
+  }
+  
+  .scheme-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+  }

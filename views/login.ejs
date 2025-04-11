@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <% if (typeof error !== 'undefined') { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+  
+  <main class="glow-container">
+    <button id="darkToggle" title="Toggle Dark Mode">🌙</button>
+    <h2>Login</h2>
+
+    <form id="loginForm" action="/login" method="POST" novalidate>
+      <div class="input-group floating">
+        <input name="email" type="email" required />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group floating">
+        <input id="password" name="password" type="password" required />
+        <label>Password</label>
+        <span id="togglePassword" class="toggle-eye">👁</span>
+      </div>
+
+      <button type="submit" class="animated-btn">Login</button>
+      <div id="formError" class="error"></div>
+    </form>
+
+    <hr>
+
+    <div class="social-buttons">
+      <a class="social google" href="/auth/google">
+        <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google" />
+        Login with Google
+      </a>
+      <a class="social facebook" href="/auth/facebook">
+        <img src="https://img.icons8.com/fluency/24/000000/facebook-new.png" alt="Facebook" />
+        Login with Facebook
+      </a>
+      <a class="social github" href="/auth/github">
+        <img src="https://img.icons8.com/ios-glyphs/24/000000/github.png" alt="GitHub" />
+        Login with GitHub
+      </a>
+    </div>
+
+    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

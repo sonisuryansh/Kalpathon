@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/signup.css" />
+</head>
+<body>
+  <button id="darkToggle" title="Toggle Theme">☀</button>
+
+  <main class="glow-container">
+    <h2>User Signup</h2>
+
+    <% if (typeof error !== 'undefined') { %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <form id="signupForm" action="/signup" method="POST">
+      <div class="input-group floating">
+        <input type="text" name="name" placeholder=" " required />
+        <label>Name</label>
+      </div>
+
+      <div class="input-group floating">
+        <input type="email" name="email" placeholder=" " required />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group floating" style="position: relative;">
+        <input type="password" name="password" id="password" placeholder=" " required />
+        <label>Password</label>
+        <span class="toggle-eye" id="togglePassword">👁</span>
+        <div id="strengthBar"></div>
+      </div>
+
+      <div class="input-group floating">
+        <input type="text" name="mobile" placeholder=" " pattern="[6-9]\d{9}" required />
+        <label>Mobile Number</label>
+      </div>
+
+      <div class="input-group floating">
+        <input type="date" name="dob" required />
+        <label style="top: -1.2rem; font-size: 0.85rem;">Date of Birth</label>
+      </div>
+
+      <div class="input-group floating">
+        <select name="region" required>
+          <option value="">Select Region</option>
+          <option value="Rural">Rural</option>
+          <option value="Urban">Urban</option>
+        </select>
+        <label style="top: -1.2rem; font-size: 0.85rem;">Region</label>
+      </div>
+
+      <div class="input-group floating">
+        <select name="income" required>
+          <option value="">Select Income</option>
+          <option value="0-1 LPA">0–1 LPA</option>
+          <option value="1-5 LPA">1–5 LPA</option>
+          <option value="5-10 LPA">5–10 LPA</option>
+          <option value="10+ LPA">10+ LPA</option>
+        </select>
+        <label style="top: -1.2rem; font-size: 0.85rem;">Income</label>
+      </div>
+
+      <div class="input-group floating">
+        <input type="text" name="aadhar" placeholder=" " pattern="\d{12}" maxlength="12" required />
+        <label>Aadhar Number</label>
+      </div>
+
+      <button type="submit" class="animated-btn">Sign Up</button>
+
+      <p class="text-center mt-3">
+        <a href="/login">Already have an account? Login</a>
+      </p>
+
+      <div id="formError" class="error text-danger text-center"></div>
+    </form>
+  </main>
+
+  <script src="/signup.js"></script>
+</body>
+</html>

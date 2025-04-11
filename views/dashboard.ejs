@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GovChain - Scheme Awareness Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/dashboard.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GovChain</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#myschemes">My Schemes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#eligibility">Check Eligibility</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">contact-us</a></li>
+        </ul>
+        <!-- Language Switcher -->
+        <select class="form-select form-select-sm ms-3 w-auto" onchange="switchLang(this.value)">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero text-white text-center">
+    <div class="hero-overlay">
+      <div class="container" data-aos="fade-up">
+        <h1 class="display-4 fw-bold">GovChain - Scheme Awareness Portal</h1>
+        <p class="lead">Bringing transparency to government schemes using AI and blockchain.<br/>
+          Discover benefits you're entitled to — fast, secure, and inclusive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotlight Carousel -->
+  <section class="container my-5" id="spotlight">
+    <h2 class="text-center mb-4" data-aos="fade-up">Spotlight Schemes</h2>
+    <div id="spotlightCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <h5>PM Fasal Bima Yojana</h5>
+          <p>Crop insurance support during natural calamities.</p>
+        </div>
+        <div class="carousel-item text-center">
+          <h5>Sukanya Samriddhi Yojana</h5>
+          <p>Girl child savings scheme with high interest.</p>
+        </div>
+        <div class="carousel-item text-center">
+          <h5>Startup India</h5>
+          <p>Tax and funding support for new-age entrepreneurs.</p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#spotlightCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#spotlightCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Dashboard Stats -->
+  <section class="container my-5 text-center" id="dashboard" data-aos="fade-up">
+    <h2 class="mb-4">Our Impact</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h3 class="counter" data-target="150000">0</h3>
+        <p>Registered Citizens</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="counter" data-target="820">0</h3>
+        <p>Government Schemes Listed</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="counter" data-target="58000">0</h3>
+        <p>Applications Processed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility Checker -->
+  <section id="eligibility">
+    <div class="container bg-white rounded p-5 shadow" data-aos="fade-up">
+      <h2 class="mb-4">Check Eligibility</h2>
+      <form id="eligibilityForm">
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="income" placeholder="Annual Income" required />
+          <label for="income">Annual Income</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="region" placeholder="Region" required />
+          <label for="region">Region</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="education" placeholder="Education Level" required />
+          <label for="education">Education Level</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Find Schemes</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- My Schemes Section -->
+  <section id="myschemes" class="my-5">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold text-dark">Government Schemes</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="scheme-card">
+            <span class="scheme-tag bg-primary">Financial</span>
+            <h5 class="scheme-title">PM Jan Dhan Yojana</h5>
+            <p class="scheme-desc">Universal access to banking facilities with financial literacy, credit, insurance & pension.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="scheme-card">
+            <span class="scheme-tag bg-success">Startup</span>
+            <h5 class="scheme-title">PM Mudra Yojana</h5>
+            <p class="scheme-desc">Offers collateral-free micro loans to small & medium businesses in rural and urban areas.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="scheme-card">
+            <span class="scheme-tag bg-warning text-dark">Pension</span>
+            <h5 class="scheme-title">Atal Pension Yojana</h5>
+            <p class="scheme-desc">Aimed at unorganized sector, providing fixed pensions ranging ₹1K–₹5K per month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container my-5" id="testimonials" data-aos="fade-up">
+    <h2 class="text-center mb-4">What Citizens Say</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 h-100 shadow-sm">
+          <p>“Thanks to GovChain, I discovered 3 schemes I never knew I was eligible for.”</p>
+          <small class="text-muted">– Meena Devi, Varanasi</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100 shadow-sm">
+          <p>“The AI matcher is a game-changer for farmers and small business owners.”</p>
+          <small class="text-muted">– Rajesh Sharma, Pune</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100 shadow-sm">
+          <p>“So easy to use in Hindi! My mother could use it without help.”</p>
+          <small class="text-muted">– Asha Kumari, Lucknow</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container my-5" data-aos="fade-up">
+    <h2 class="mb-3">Contact Us</h2>
+    <p>Email: support@govchain.in</p>
+    <p>Address: BBD University, Lucknow, Uttar Pradesh</p>
+    <p>Team Name : KALP</p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/dashboard.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- 🔗 Botpress Chatbot Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script> 
+  <script src="https://files.bpcontent.cloud/2025/04/11/15/20250411155209-HCOSQOX6.js"></script>
+
+</body>
+</html>

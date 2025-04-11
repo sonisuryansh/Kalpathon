@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(135deg, #1c1c1e, #2a2a2c);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #e0e0e0;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Light theme styles */
+body.light {
+  background: linear-gradient(135deg, #e6e9f0, #f1f3f6);
+  color: #222;
+}
+
+main {
+  background: #1f1f1f;
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+  transition: background 0.4s, color 0.4s;
+}
+
+body.light main {
+  background: #fff;
+  color: #222;
+}
+
+main::before {
+  content: "🔐";
+  font-size: 2.8rem;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2e2e2e;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+body.light main::before {
+  background: #fff;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.input-group {
+  position: relative;
+  margin: 0.6rem 0;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+body.light .input-group .icon {
+  color: #666;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #eaeaea;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+body.light .input-group input {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #222;
+}
+
+.input-group input:focus {
+  border-color: #6495ed;
+  box-shadow: 0 0 8px rgba(100, 149, 237, 0.4);
+  outline: none;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+body.light .toggle-eye {
+  color: #666;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #3b5998;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2d4373;
+  box-shadow: 0 0 12px rgba(45, 67, 115, 0.5);
+}
+
+#darkToggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #ccc;
+}
+
+body.light #darkToggle {
+  color: #333;
+}
+
+hr {
+  margin: 1.8rem 0;
+  border: none;
+  border-top: 1px solid #444;
+}
+
+body.light hr {
+  border-top: 1px solid #ccc;
+}
+
+a {
+  display: block;
+  margin: 0.6rem 0;
+  color: #6495ed;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #4169e1;
+}
+
+p {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+body.light p {
+  color: #444;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .input-group input,
+  button {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Social login buttons --- */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+.social.google {
+  background-color: #db4437;
+}
+
+.social.facebook {
+  background-color: #3b5998;
+}
+
+.social.github {
+  background-color: #333;
+}
+
+.social:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+body.light .social {
+  color: #fff;
+}
+
+body.light .social.google { background-color: #ea4335; }
+body.light .social.facebook { background-color: #4267B2; }
+body.light .social.github { background-color: #24292e; }
+
+/* ---- Animated Button ---- */
+.animated-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #3b5998;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s;
+  }
+  
+  .animated-btn:hover {
+    background-color: #2d4373;
+    box-shadow: 0 0 12px rgba(45, 67, 115, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .animated-btn:active {
+    transform: scale(0.96);
+  }
+  
+  /* ---- Input Focus Animation ---- */
+  .input-group input:focus {
+    border-color: #6495ed;
+    box-shadow: 0 0 8px rgba(100, 149, 237, 0.5);
+    transform: scale(1.02);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  body, main, input, button {
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+    /* Floating Labels */
+.input-group.floating {
+    position: relative;
+    margin: 1rem 0;
+  }
+  
+  .input-group.floating input {
+    width: 100%;
+    padding: 1rem 0.75rem 0.25rem 0.75rem;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #eaeaea;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .input-group.floating label {
+    position: absolute;
+    left: 0.8rem;
+    top: 1rem;
+    color: #999;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  
+  .input-group.floating input:focus + label,
+  .input-group.floating input:not(:placeholder-shown):valid + label {
+    top: 0.3rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    color: #6495ed;
+  }
+  
+  body.light .input-group.floating input {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #222;
+  }
+  
+  body.light .input-group.floating label {
+    color: #666;
+  }
+  
+  /* Strength bar */
+  #strengthBar {
+    height: 6px;
+    margin-top: 4px;
+    border-radius: 5px;
+    background: #444;
+    transition: background 0.3s ease, width 0.3s ease;
+  }
+  
+  /* Glow effect */
+  .glow-container {
+    box-shadow: 0 0 30px rgba(100, 149, 237, 0.3);
+    transition: box-shadow 0.4s ease;
+  }
+  
+  body.light .glow-container {
+    box-shadow: 0 0 20px rgba(100, 149, 237, 0.2);
+  }
+  
+  /* Animate focus scale */
+  .input-group.floating input:focus {
+    transform: scale(1.01);
+    border-color: #6495ed;
+    box-shadow: 0 0 10px rgba(100, 149, 237, 0.2);
+  }
+  
+  /* Adjust spacing for password eye and bar */
+  .toggle-eye {
+    position: absolute;
+    right: 10px;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #bbb;
+  }
