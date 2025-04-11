@@ -8,10 +8,10 @@ const pool = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-pool.connect(err => {
-  if (err) throw err;
-  console.log('MySQL connected');
-});
+// pool.connect(err => {
+//   if (err) throw err;
+//   console.log('MySQL connected');
+// });
 
 // module.exports = db;
 module.exports = pool.promise();
