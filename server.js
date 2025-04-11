@@ -92,7 +92,7 @@ app.get('/dashboard', (req, res) => {
 
 // Start server
 const PORT = 3000;
-app.litsen(PORT, () =>{
+app.listen(PORT, () =>{
   console.log(`Server running on port ${PORT}`);
 });
 //app.listen(3000, () => console.log('🚀 Server running at http://localhost:3000'));
