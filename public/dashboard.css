@@ -198,3 +198,21 @@ body {
     color: #555;
     line-height: 1.6;
   }
+
+
+#backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      left: 30px; /* 👈 Left side position */
+      z-index: 999;
+      font-size: 20px;
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}    
+  
