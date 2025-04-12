@@ -154,4 +154,38 @@ function openChat() {
       observer.observe(card);
     });
   });
+
+
+window.onscroll = function () {
+    const btn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE
+  }
+
+
+
+  document.getElementById("eligibilityForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const income = document.getElementById("income").value;
+    const region = document.getElementById("region").value;
+    const education = document.getElementById("education").value;
+
+    const result = `Income: ₹${income}<br>Region: ${region}<br>Education: ${education}<br><br>🎯 Matching schemes will be shown in future builds.`;
+
+    document.getElementById("resultText").innerHTML = result;
+    document.getElementById("popupModal").style.display = "flex";
+  });
+
+  function closePopup() {
+    document.getElementById("popupModal").style.display = "none";
+  }
     
